@@ -12,13 +12,11 @@ def obtener_datos(departamento, limite_registros):
                      limit=limite_registros,)
 
     results_df = pd.DataFrame.from_records(results)
-    prueba = 'pais_viajo_1_nom' in results_df.columns
+    comprobar_columna = 'pais_viajo_1_nom' in results_df.columns
 
-    if prueba == True :
-        results_df.columns = ['Ciudad de Ubicacion', 'Departamento', 'Edad', 'Tipo', 'Estado', 'Pais de Origen']
-    else:
-        results_df.columns = ['Ciudad de Ubicacion', 'Departamento', 'Edad', 'Tipo', 'Estado']
+    if comprobar_columna == False:
+        results_df[''] = "" #Arreglo
 
-    results_df['Pais de Origen']=""
+    results_df.columns = ['Ciudad de Ubicacion', 'Departamento', 'Edad', 'Tipo', 'Estado', 'Pais de Origen']
     
     return results_df
