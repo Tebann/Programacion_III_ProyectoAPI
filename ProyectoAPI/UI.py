@@ -4,6 +4,8 @@ import API
 
 #Solicitamos el nombre del departamento al usuario
 def obtener_departamento():
+    print("Bienvenido!")
+    print("Aqui puede realizar la consulta sobre los casos de COVID-19 en Colombia")
     return input("Ingrese el departamento deseado: ")
 
 #Solicitamos el límite de registros al usuario
