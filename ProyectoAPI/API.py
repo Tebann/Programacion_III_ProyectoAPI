@@ -4,6 +4,14 @@
 import pandas as pd
 from sodapy import Socrata
 
+#Funcion la cual crea una lista con todos los departamentos del registro
+def crear_lista():
+    client = Socrata("www.datos.gov.co", None)
+    results = client.get("gt2j-8ykr")
+    results_df = pd.DataFrame.from_records(results)
+    nombre_lista = list(results_df["departamento_nom"])
+    return nombre_lista
+
 def obtener_datos(departamento, limite_registros):
     #Se obtienen los datos de la API
     client = Socrata("www.datos.gov.co", None)
