@@ -17,4 +17,4 @@ def main():
 if __name__ == '__main__':
     main()
 
-input("Presione cualquier tecla para salir...") 
+input("Presione cualquier tecla para salir...")  
